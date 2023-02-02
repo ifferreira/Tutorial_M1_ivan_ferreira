@@ -1,9 +1,9 @@
 extends Node # instancia a classe Node2D
 
-var status = 1
-var vscore = 0
-var x = 1.5 
-var y = 1.5 
+var status = 1 # indica se o jogador está jogando(status = 1) ou se já deu game over(status = 0)
+var vscore = 0 # registra a pontuação à medida que atravessa as colunas
+var x = 4 # influencia a velocidade em que o background e as colunas se mexem na horizontal
+var y = 1.5 # influencia a velocidade da queda livre do dragão, bem como o movimento vertical das colunas
 
 # executa essa função ao carregar o jogo
 func _ready():
@@ -17,18 +17,18 @@ func _process(delta):
 	if status == 1: # jogando
 		
 		# movimenta o cenário do fundo
-		$background.position.x -= 1*x
-		if ($background.position.x) < -200:
-			$background.position.x = 600
+		$background.position.x -= 1*x # faz o background, a cada frame, se deslocar 1.5 para a esquerda(valores de x cada vez menores)
+		if ($background.position.x) < -200: 
+			$background.position.x = 600 # se o background ultrapassar a posição de x igual a -200, é imediatamente levado à posição de x igual a 600
 			
 		# movimenta as colunas para colisão
-		$columns.position.x -= 2*x
+		$columns.position.x -= 2*x # as colunas se movem horizontalmente para valores cada vez menores de x a uma velocidade de 3/frame
 		if ($columns.position.x) < -550:
 			$columns.position.x = rand_range(0, 350) - 50
-			$columns.position.y = rand_range(0, 400) - 200
+			$columns.position.y = rand_range(0, 400) - 200 # a coluna reaparece, mas com um valor de y aleatório dentro do intervalo determinado
 		
 		# puxa o dragão para baixo
-		$dragon.position.y += y
+		$dragon.position.y += 4*y # o dragão se movimenta para valores cada vez maiores de y com uma velocidade de 1.5/frame
 
 		# se bateu no fundo, não desce mais e termina o jogo
 		if $dragon.position.y > 480:
@@ -41,11 +41,11 @@ func _process(delta):
 			
 		# se apertou seta para baixo, aumenta o valor de y (posição vertical) do dragão
 		if Input.is_action_pressed("ui_down"):
-			$dragon.position.y += 2
+			$dragon.position.y += 8
 
 		# se apertou seta para cima, diminui o valor de y (posição vertical) do dragão
 		if Input.is_action_pressed("ui_up"):
-			$dragon.position.y -= 4
+			$dragon.position.y -= 16
 			
 	elif status == 0: # parado
 		
