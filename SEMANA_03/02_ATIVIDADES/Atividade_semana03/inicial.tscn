@@ -1,0 +1,47 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://inicial.gd" type="Script" id=1]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource( 1 )
+
+[node name="Button" type="Button" parent="."]
+margin_left = 186.0
+margin_top = 147.0
+margin_right = 483.0
+margin_bottom = 202.0
+text = "1-Crie uma lista preenchida e mostre na tela"
+
+[node name="Button2" type="Button" parent="."]
+margin_left = 187.0
+margin_top = 219.0
+margin_right = 749.0
+margin_bottom = 272.0
+text = "2-Crie uma lista vázia, preencha com os dados enviados pelo usuário e mostre na tela"
+
+[node name="Button3" type="Button" parent="."]
+margin_left = 187.0
+margin_top = 290.0
+margin_right = 503.0
+margin_bottom = 345.0
+text = "3-Crie uma função que retorne um texto na tela"
+
+[node name="Button4" type="Button" parent="."]
+margin_left = 188.0
+margin_top = 365.0
+margin_right = 704.0
+margin_bottom = 420.0
+text = "4-Crie uma função que reçeba um valor inserido pelo usuário e retorne na tela."
+
+[node name="Label2" type="Label" parent="."]
+margin_left = 263.0
+margin_top = 82.0
+margin_right = 731.0
+margin_bottom = 113.0
+text = "Escolha uma das opções abaixo"
+align = 1
+
+[connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]
+[connection signal="pressed" from="Button2" to="." method="_on_Button2_pressed"]
+[connection signal="pressed" from="Button3" to="." method="_on_Button3_pressed"]
+[connection signal="pressed" from="Button4" to="." method="_on_Button4_pressed"]
