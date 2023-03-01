@@ -1,0 +1,78 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Node2D.gd" type="Script" id=1]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource( 1 )
+
+[node name="Button" type="Button" parent="."]
+margin_left = 512.0
+margin_top = 83.0
+margin_right = 735.0
+margin_bottom = 119.0
+text = "Registrar número e nome (1)"
+
+[node name="Button2" type="Button" parent="."]
+margin_left = 271.0
+margin_top = 246.0
+margin_right = 510.0
+margin_bottom = 287.0
+text = "Incrementar número inserido (2)"
+
+[node name="Button3" type="Button" parent="."]
+margin_left = 534.0
+margin_top = 247.0
+margin_right = 848.0
+margin_bottom = 284.0
+
+[node name="Label" type="Label" parent="Button3"]
+margin_left = 8.0
+margin_top = 3.0
+margin_right = 285.0
+margin_bottom = 38.0
+text = "Adicionar tantos \"Baldos\" no final do nome
+quantos forem os números ímpares da lista (3)"
+
+[node name="LineEdit" type="LineEdit" parent="."]
+margin_left = 256.0
+margin_top = 49.0
+margin_right = 476.0
+margin_bottom = 87.0
+
+[node name="LineEdit2" type="LineEdit" parent="."]
+margin_left = 257.0
+margin_top = 105.0
+margin_right = 477.0
+margin_bottom = 143.0
+
+[node name="texto1" type="Label" parent="."]
+margin_left = 75.0
+margin_top = 61.0
+margin_right = 240.0
+margin_bottom = 75.0
+text = "Insira um número inteiro:"
+
+[node name="texto2" type="Label" parent="."]
+margin_left = 130.0
+margin_top = 117.0
+margin_right = 291.0
+margin_bottom = 131.0
+text = "Insira um nome:"
+
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_left = 304.0
+margin_top = 312.0
+margin_right = 772.0
+margin_bottom = 430.0
+
+[node name="Label" type="Label" parent="ColorRect"]
+modulate = Color( 0, 0, 0, 1 )
+self_modulate = Color( 0, 0, 0, 1 )
+margin_left = 7.0
+margin_top = 7.0
+margin_right = 461.0
+margin_bottom = 111.0
+
+[connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]
+[connection signal="pressed" from="Button2" to="." method="_on_Button2_pressed"]
+[connection signal="pressed" from="Button3" to="." method="_on_Button3_pressed"]
